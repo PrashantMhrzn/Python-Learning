@@ -1,40 +1,52 @@
-# Type Conversion/Casting
+# Operator
 
-my_str = "123" 
-int(my_str)
-print(type(my_str))
+# Arithemetic Operations
+a= 10
+b=5
 
-my_con_list = "12345abccc"
+c = a+b
+print(f"Add: {c}")
 
-# Converting into list
-my_con_list = list(my_con_list)
-print(my_con_list)
+c = a-b
+print(f"Substract: {c}")
 
-# Converting into tuple
-my_con_list = tuple(my_con_list)
-print(my_con_list)
+c = a*b
+print(f"Multiply: {c}")
 
-# Converting into set
-my_con_list = set(my_con_list)
-print(my_con_list)
+c = a/b
+print(f"Divide: {c}")
 
-# Converting into dict
-# List of Tuple into Dictionary
-my_dict_list = [(1, 'ram'), (2, 'shyam'), (3, 'bham')]
+c = a//b
+print(f"Floor Divide: {c}")
 
-my_dict_list = dict(my_dict_list)
-print(my_dict_list)
+c = a%b
+print(f"Modulus: {c}")
 
-# Activity - Change values of tuple by type conversion
-to_change_tuple = ("apple","banana","kiwi","orange","cat")
-print(to_change_tuple)
-# Change to list
-tup_to_lst = list(to_change_tuple)
+c = a**b
+print(f"Exponential: {c}")
 
-# Change data
-tup_to_lst[4] = "mango"
+# Assignment Operator
 
-# Change to tuple
-lst_to_tup = tuple(tup_to_lst)
+x = 10
 
-print(lst_to_tup)
+x += 5   # x = x + 5
+print(x)
+
+x -= 2
+print(x)
+
+x *= 55
+print(x)
+
+x /= 5
+print(x)
+
+x //= 2
+print(x)
+
+x %= 3
+print(x)
+
+x **= 10
+print(x)
+
