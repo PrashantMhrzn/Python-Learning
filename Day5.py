@@ -40,3 +40,4 @@ elif marks <= 39:
     print("D")
 else:
     print("Out of range!")
+    
