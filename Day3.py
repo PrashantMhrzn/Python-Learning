@@ -16,7 +16,7 @@ print(my_list)
 
 print(my_list[::2])
 
-# Activity: Make a list of your hobbies, print a sentence like "I like <list data>" using indexing
+# Activity: Make a list of your hobbies, print a sentence like "I like <=list data>=" using indexing
 my_hobbies = ['Playing Guitar', 'Cooking', 'Coding']
 
 for i in range(len(my_hobbies)):

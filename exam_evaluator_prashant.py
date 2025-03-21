@@ -1,19 +1,3 @@
-# Conditional Statement
-# Activity - ask user for their age
-# If age is less than 18 print smth
-# If age is greater than 18 print another statement
-# else, print a statement
-
-# age = int(input("Enter your age: "))
-
-# if age <= 18:
-#     print("Under the drinking limit!")
-# elif age >= 18:
-#     print("Good to drink!")
-# else:
-#     print("Some more time...")
-
-
 # Activity - Exam evaluator: Ask user to enter a mark, if mark is greater than 90 and less than 100 print smth
 # If mark is greater than 80 and less than 90 print smth
 # If mark is greater than 70 and less than 80 print smth

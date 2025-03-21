@@ -61,11 +61,9 @@ print(c in z)
 x = ['a', 'b', 'c']
 y = ['a', 'b', 'c']
 
-check1 = "a"
-check2 = "b"
-check3 = "c"
+print(y in x)
 
-print(check1 in y)
-print(check2 in y)
-print(check3 in y)
+x = ['a', 'b', 'c', ['a', 'b', 'c']]
+
+print(y in x)
 
