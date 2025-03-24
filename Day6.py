@@ -13,3 +13,9 @@ while a < b:
         while c == 7:
             print("Double nested while")
             c -= 1
+
+# For loop
+a = [1,2,3,4,'a','b']
+for i in a:
+    print(i)
+    print(a)
