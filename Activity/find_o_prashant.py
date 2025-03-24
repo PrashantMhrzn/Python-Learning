@@ -11,3 +11,5 @@ for o in find_o:
         count += 1
 print(f'Total Os: {count}')
 
+total = find_o.count('o')
+print(total)
