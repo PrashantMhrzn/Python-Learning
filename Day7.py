@@ -30,3 +30,14 @@ print(c)
 
 a.difference_update(b)
 print(a)
+
+# Dictionary
+a = {'name': 'john', 'age':20, 'city': 'NewYork' }
+
+print(a.items())
+print(a.keys())
+print(a.values())
+
+print(a.get('name'))
+print(a.get('age'))
+print(a.get('city'))
