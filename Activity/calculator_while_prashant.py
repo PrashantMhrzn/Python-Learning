@@ -3,34 +3,32 @@
 # implement while loop in calculator from day 5
 # ask use if they want to continue, if yes continue the calculation, if no end the program
 
-while True:
-    inp_a = int(input("Enter first number: "))
-    inp_b = int(input("Enter second number: "))
+try: 
+    while True:
+        inp_a = int(input("Enter first number: "))
+        inp_b = int(input("Enter second number: "))
 
-    op = input("Enter operator:(+/-/*/ /) ")
+        op = input("Enter operator:(+/-/*/ /) ")
 
-    if op == '+':
-        res = inp_a + inp_b
-        print(f"Sum : {res}")
-    elif op == '-':
-        res = inp_a - inp_b
-        print(f"Difference : {res}")
-    elif op == '*':
-        res = inp_a * inp_b
-        print(f"Product : {res}")
-    elif op == '/':
-        res = inp_a / inp_b
-        print(f"Divide : {res}")
-    else:
-        print("Invalid operator")
+        if op == '+':
+            res = inp_a + inp_b
+            print(f"Sum : {res}")
+        elif op == '-':
+            res = inp_a - inp_b
+            print(f"Difference : {res}")
+        elif op == '*':
+            res = inp_a * inp_b
+            print(f"Product : {res}")
+        elif op == '/':
+            res = inp_a / inp_b
+            print(f"Divide : {res}")
+        else:
+            print("Invalid operator")
 
-    con = input("Do you want to continue?[y/n]: ")
-    if con == 'y':
-        continue
-    elif con == 'n':
-        break
-    else:
-        print("Wrong input!")
-        break
+        con = input("Do you want to continue?[y/n]: ").upper()
+        if con != 'Y':
+            break
 
+except:
+    print('Error occured')
 
