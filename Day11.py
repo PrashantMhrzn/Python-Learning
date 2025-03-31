@@ -11,33 +11,41 @@
 # app_file = open("D:/Dev/Python Learning/day11.txt", 'a')
 # app_file.write(" Append to this file")
 
-choice = input("Would you like to login or register?:\n1.Register\n2.Login\n> ")
-if choice == '1': 
-    username = input('Enter your username to be stored: ')
-    password = input('Enter your password to be stored: ')
-    login_file = open('D:/Dev/Python Learning/Activity/bank_acc.txt', 'a')
-    login_file.write(f'{username},{password},')
-    login_file.close()
-elif choice == '2':
-    inp_username = input('Enter your username: ')
-    inp_password = input('Enter your password: ')
-    login_file = open('D:/Dev/Python Learning/Activity/bank_acc.txt', 'r')
-    read = login_file.read()
-    users = read.split(',')
-    username = users[::2]
-    password = users[1::2]
-    credentials = dict(zip(username, password))
-    print(users)
-    print(username)
-    print(password)
-    print(credentials)
-    if inp_username in credentials.keys():
-        if inp_password == credentials.get(inp_username):
-            print("Logged in")
-        else:
-            print('Password for the given username doesn\t match! Enter a valid password!')
-    else:
-        print('Username not found in database! Please enter a valid username!')
-    login_file.close()
-else:
-    print('Invalid input')
+# choice - login, register
+choice = input('''
+1. Register
+2. Login
+>''')
+# if register,get username and password, store the username in a file
+
+if choice == "1":
+   username = input("Enter username:")
+   password = input("Enter password")
+   f = open('userdata.txt','a')
+   f.write(f"{username}:{password},")
+   print("Registation successfull")
+   f.close()
+# if login, get username, check if it exist in the file
+
+elif choice == "2":
+   username = input("Enter username:")
+   password = input("Enter password")
+   is_login = False
+   f = open('userdata.txt','r')
+   a = f.read()
+   f.close()
+   list_data = a.split(",")
+   for i in list_data:
+      z = i.split(":")
+      if username == z[0] and password == z[1]:
+         is_login = True
+
+   if is_login:
+      print("Login successfull")
+   else:
+      print("Invalid")
+
+# Accounting- use file handling
+# choice - login, register
+# if register,get username, store the username in a file
+# if login, get username, check if it exist in the file
