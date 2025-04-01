@@ -6,13 +6,17 @@
 # if option is add, ask for the amount to add and add it to the user's balance file {username:balance}
 # if option is check, print the amount of the user if balance is present in the file, if not print "no balance"
 # if user is not valid, print "invalid user"
+
 def check_balance(username):
-    f = open('D:/Dev/Python Learning/money.txt', 'r')
+    f = open('money.txt', 'r')
     data = f.read()
+    # unit = ['ram:123', 'hari:123']
     unit = data.split(',')
+    # while we don't find the right match for username, we keep on looping using valid
     valid = False
     for i in unit:
         uname = i.split(":")
+        # check if the usernames match
         if uname[0] == username:
             valid = True
             b = uname[1]
@@ -23,42 +27,46 @@ def check_balance(username):
 
 def add_balance(username):
     add = int(input('How much would you like to add?: Rs.'))
-    f = open('D:/Dev/Python Learning/money.txt', 'r')
+    # first open in read 
+    f = open('money.txt', 'r')
     data = f.read()
     unit = data.split(',')
     valid = False
+    # updated_data is overwrite the file as a whole so we store one updated amount and others remain unchanged
     updated_data = []
     for i in unit:
         uname = i.split(':')
         if uname[0] == username:
             valid = True
-            print(uname[1])
             new = int(uname[1]) + add
             updated_data.append(f'{username}:{new}')
         else:
             updated_data.append(i)
+    # when the operation is complete, we overwrite the file with new changed data
     if valid:
-        m = open('D:/Dev/Python Learning/money.txt', 'w')
+        m = open('money.txt', 'w')
+        # since updated_data is a list, we need to convert the content into string seperated by ,
         m.write(','.join(updated_data))
         print(f"Rs. {add} added successfully!")
     else:
         print("User not found!")
 
 def register():
+    # when registering, we create two files one for username and other for money with the same username
     username = input('Enter your username: ')
     password = input('Enter your password: ')
-    f = open('D:/Dev/Python Learning/users.txt', 'a')
+    f = open('users.txt', 'a')
     f.write(f"{username}:{password},")
     f.close()
     money = input('Enter your initial balance: ')
-    m = open('D:/Dev/Python Learning/money.txt', 'a')
+    m = open('money.txt', 'a')
     m.write(f"{username}:{money},")
     m.close()
 
 def login():
     username = input('Enter your username: ')
     password = input('Enter your password: ')
-    f = open('D:/Dev/Python Learning/users.txt', 'r')
+    f = open('users.txt', 'r')
     data = f.read()
     unit = data.split(',')
     is_logged = False
@@ -67,6 +75,7 @@ def login():
         if uname[0] == username and uname[1] == password:
             # if uname and pw is not what we entered, then skip to the next value cause is_logged is False
             is_logged = True
+
     if is_logged:
         print('Logged in')
         while True:
