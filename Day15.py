@@ -1,20 +1,25 @@
 # OOP
-class StudentForm:
-	firstname = 'ram'
-	lastname = 'bahadur'
-	age = 10
-	
-	def get_info(self):
-		print(f'Firstname: {self.firstname}')
-	
-	def set_into(self, firstname):
-		self.firstname = firstname
-		self.get_info()
-		
-# s1 = StudentForm()
-# print(s1.age)
-# s1.age = 30
-# print(s1.age)
 
-# s2 = StudentForm()
-# s2.set_info('Gopal')
+
+# Requierments
+# create a class called dog
+# should have attributes to define dog objects and methods like move, eat, get_legs, get_name
+class Dog:
+    def __init__(self):
+        self.name = 'Brown'
+        self.breed = 'Husky'
+		
+    def move(self, direction):
+        print(f'{self.name} moved to {direction}!')
+
+    def eat(self, *food):
+        count = 0
+        for i in food:
+            count += 1
+        print(f'{self.name} ate {count} times')
+
+hus = Dog()
+print(hus.name)
+print(hus.breed)
+hus.move('south')
+hus.eat('meat', 'rice', 'bones')
