@@ -9,4 +9,7 @@ def contact_us(request):
 
 def about_us(request):
     return HttpResponse('Hi we are learning Django!')
+
+def home(request):
+    return render(request, 'home.html')
 # Create your views here.
