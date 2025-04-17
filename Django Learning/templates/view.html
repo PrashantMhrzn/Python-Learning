@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}View all data from database{% endblock title %}
+{% block body %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Is the task completed</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+                <td>{{ task.is_completed }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock body %}
