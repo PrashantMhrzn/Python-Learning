@@ -8,5 +8,6 @@ urlpatterns = [
     path('home/', home),
     path('/', base),
     path('views/', view),
+    # path('create/', create),
 
 ]

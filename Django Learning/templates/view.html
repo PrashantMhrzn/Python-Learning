@@ -16,7 +16,18 @@
                 <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ task.title }}</td>
                 <td>{{ task.description }}</td>
-                <td>{{ task.is_completed }}</td>
+                {% if task.is_completed == 'False' %}
+                <td>
+                  <div class="alert alert-danger" role="alert">
+                    Pending
+                  </div>
+                </td>
+                {% elif task.is_completed == 'True' %}
+                  <div class="alert alert-success" role="alert">
+                    Completed
+                  </div>
+                {% endif %}
+                </td>
             </tr>
         {% endfor %}
     </tbody>
