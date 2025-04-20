@@ -10,7 +10,9 @@
         <th scope="col">#</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
-        <th scope="col">Is the task completed</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+
       </tr>
     </thead>
     <tbody>
@@ -32,6 +34,21 @@
                   </div>
                 </td>
                 {% endif %}
+                </td>
+                <td>
+                  <a href="{{task.pk}}" class="btn btn-success">
+                    Done
+                  </a>
+                </td>
+                <td>
+                  <a href="{{task.pk}}/edit/" class="btn btn-primary">
+                    Edit
+                  </a>
+                </td>
+                <td>
+                  <a href="{{task.pk}}/delete/" class="btn btn-danger">
+                    Delete
+                  </a>
                 </td>
             </tr>
         {% endfor %}
