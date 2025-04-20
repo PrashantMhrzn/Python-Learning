@@ -4,4 +4,4 @@ from django.db import models
 class TodoList(models.Model):
     title = models.CharField(100)
     description = models.TextField(100)
-    is_completed = models.BooleanField(default=True)
+    is_completed = models.BooleanField(default=False)

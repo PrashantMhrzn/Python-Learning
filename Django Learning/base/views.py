@@ -17,10 +17,20 @@ def home(request):
 def base(request):
     return render(request, 'base.html')
 
-def view(request):
-    tasks = TodoList.objects.all()
+def task(request):
+    obj = TodoList.objects
+    tasks = obj.all()
+    all = obj.all().count() 
+    completed  = obj.filter(is_completed = True).count()
+    not_completed  = obj.filter(is_completed = False).count()
     context = {
-        'tasks': tasks
+        'tasks': tasks,
+        'all' : all,
+        'completed' : completed,
+        'not_completed' : not_completed
     }
-    return render(request, 'view.html', context)
+    return render(request, 'task.html', context)
+
+def create(request):
+    return render(request, 'create.html')
 # Create your views here.

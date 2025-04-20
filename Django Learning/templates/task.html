@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block title %}View all data from database{% endblock title %}
 {% block body %}
+<h2>Total number of tasks: {{all}}</h2>
+<h2>Total number of completed tasks: {{completed}}</h2>
+<h2>Total number of not completed tasks: {{not_completed}}</h2>
 <table class="table">
     <thead>
       <tr>
@@ -16,16 +19,18 @@
                 <th scope="row">{{ forloop.counter }}</th>
                 <td>{{ task.title }}</td>
                 <td>{{ task.description }}</td>
-                {% if task.is_completed == 'False' %}
+                {% if task.is_completed == False %}
                 <td>
                   <div class="alert alert-danger" role="alert">
                     Pending
                   </div>
                 </td>
-                {% elif task.is_completed == 'True' %}
+                {% elif task.is_completed == True %}
+                <td>
                   <div class="alert alert-success" role="alert">
                     Completed
                   </div>
+                </td>
                 {% endif %}
                 </td>
             </tr>

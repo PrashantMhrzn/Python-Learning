@@ -7,7 +7,8 @@ urlpatterns = [
     path('about/', about_us),
     path('home/', home),
     path('/', base),
-    path('views/', view),
+    path('task/', task),
+    path('task/create/', create),
     # path('create/', create),
 
 ]
