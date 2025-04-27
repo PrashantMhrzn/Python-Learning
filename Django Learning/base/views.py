@@ -66,6 +66,5 @@ def edit(request, pk):
 def delete(request, pk):
     task = TodoList.objects.get(pk = pk)
     task.delete()
-    task.save()
     return redirect('/task/')
 # Create your views here.
